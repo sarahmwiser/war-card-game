@@ -1,3 +1,8 @@
+// This was suppose to be an interactive war game with 'the computer'
+// but it didnt work and I ran out of time to fix it.
+
+
+
 class Card{
     constructor(suit, value){
         this.suit = suit;
@@ -8,7 +13,7 @@ class Deck{
     constructor(){
         this.cards = [];
     }
-}
+}       // This was to create the deck
 function createDeck(){
 let suit = ['Spade', 'Heart', 'Club', 'Diamond'];
 let value = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K'];
@@ -20,32 +25,16 @@ for (let s = 0; s < suit.length; s++){
         deck.push(suit(s) + value(v));
     } return deck;
 } 
-}
-function shuffleDeck(playerDeck, computerDeck){
-
-let index = suit.length, randomIndex1;
-//let playerDeck = randomIndex1;
-//let computerDeck = randomIndex2;
-for (index != 0; index < 26; index ++){
-   randomIndex1 = Math.floor(Math.random()* index); index--;
-let index2 = value.length, randomIndex2;
-while (index2 != 0){
-   randomIndex2 = Math.floor(Math.random() * index2); index2--;
-}} return playerDeck + computerDeck;
-}
-
-//for (let card of deck.cards){
-  //  console.log(card.suit + ' ' + card.value);
-//}
+};
 
 class Player {
-    constructor(player1){
-        this.player1 = player1;
+    constructor(){
+        this.players = [];
         this.score = 0;
         this.hand = [];
     }
     describe(){
-       return this.player1;
+       return this.players;
     }
 }
 
@@ -57,21 +46,38 @@ class Menu{
 
     startGame(){
         
-        const player1 = new Player(prompt('Enter your name: '));
+        const player1 = new Player('Player1');
         const computer = new Player('Computer');
         
-            this.players.push(player1);
-            this.players.push(computer);
-
+            player1.push;
+            computer.push;
+                // this was to give # value to all cards
         const gameDeck = new Deck();
+        let value = this.value;
 
-        dealCards(deck);
+        if (value = 'K'){
+            value = 13;
+        } else if (value = 'Q'){
+            value = 12;
+        } else if (value = 'J'){
+            value = 11;
+        } else if (value = 'A'){
+            value = 1;
+        } else value == num;
+            return value;
+        }      
+
+      
+
+        // this was to divid the deck into two
+
+        dealCards(gameDeck){
             for ( let i = 0; i < 26; i++){
                 this.players[0].push(playerDeck[i]);
                 this.players[1].push(computerDeck[i+1]);
             }
         
-
+        
         let selection = this.showMainMenuOptions();
         while (selection != 0){
             switch(selection){
@@ -86,7 +92,7 @@ class Menu{
             }  
         selection = this.showMainMenuOptions();
         }
-       // alert('Game Over ${most points} Won')
+       alert('Game Over Score: ${ps, cs}');
     }
 
     showMainMenuOptions(){
@@ -95,8 +101,8 @@ class Menu{
         1) Flip Card
         2) Show Score
         `);
-    }
-        
+    }   
+        // this was to have the interactive flipping of cards.
     flipCards(){
         let counter = 1; 
         do {
@@ -108,32 +114,22 @@ class Menu{
           alert(showScore(playerCard, computerCard)) 
           counter++;
         } while ((playRound == true)  || counter <= 26);
-        checkForGameWinner()
-    }                     
-    showScore(){
-        
+        checkForGameWinner();
+                      // this was to keep score of both hands.   
+    showScore();
+       let pv = player1.value;
+       let cv = computer.value; 
        let ps = this.players[0].score;
        let cs = this.players[1].score;
 
-       if (value = 'K'){
-           value = 13;
-       } else if (value = 'Q'){
-           value = 12;
-       } else if (value = 'J'){
-           value = 11;
-       } else if (value = 'A'){
-           value = 1;
-       } else value == num;
-           return value;
-    }
-       
-       if (player1Deck.value > computerDeck.value){
-           ps + 1;
-       } else if (computerDeck.value > player1Deck.value){
-           cs + 1;
+       if (pv > cv){
+           ps +1;
+       } else if (pv < cv){
+           cs +1;
        } else;
-    } return ps + cs;
-} 
 
+       return ps + cs;
+    
+    }}
 let menu = new Menu();
 menu.startGame();
